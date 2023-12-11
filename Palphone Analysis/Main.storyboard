@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="EvI-H5-sy5">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--WelcomeViewController-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="welcomeViewController" title="WelcomeViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="ViewController" customModule="Palphone_Analysis" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Palphone Analysis" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gcx-dZ-zZ5">
+                                <rect key="frame" x="35" y="404" width="323" height="44.333333333333314"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="37"/>
+                                <color key="textColor" name="PalphonePink"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ODI-h2-VcC">
+                                <rect key="frame" x="35" y="465" width="323" height="38.333333333333314"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Let's Analyze Call Data "/>
+                                <connections>
+                                    <segue destination="tc3-9B-oCE" kind="show" id="Re9-E1-3FK"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Gcx-dZ-zZ5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3Sc-wh-2tk"/>
+                            <constraint firstItem="ODI-h2-VcC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="MZe-qn-hQh"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ODI-h2-VcC" secondAttribute="trailing" constant="35" id="Pz3-Ff-Bj0"/>
+                            <constraint firstItem="ODI-h2-VcC" firstAttribute="top" secondItem="Gcx-dZ-zZ5" secondAttribute="bottom" constant="16.670000000000002" id="hkE-La-b40"/>
+                            <constraint firstItem="Gcx-dZ-zZ5" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="lhq-AX-s4J"/>
+                            <constraint firstItem="ODI-h2-VcC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="35" id="shn-dU-OWr"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="4KJ-5g-3eW"/>
+                    <connections>
+                        <outlet property="titleLabel" destination="Gcx-dZ-zZ5" id="hzf-fw-MbQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="950.38167938931292" y="2.8169014084507045"/>
+        </scene>
+        <!--LoginViewController-->
+        <scene sceneID="euo-Qd-YcF">
+            <objects>
+                <viewController title="LoginViewController" id="tc3-9B-oCE" customClass="LoginViewController" customModule="Palphone_Analysis" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vZg-Qh-HYz">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Palphone Analysis" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uvu-gT-5dW">
+                                <rect key="frame" x="35.333333333333343" y="403.33333333333331" width="322.33333333333326" height="45.666666666666686"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="38"/>
+                                <color key="textColor" name="PalphonePink"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Ha890180937" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vlm-7O-x5N">
+                                <rect key="frame" x="35" y="718.66666666666663" width="323" height="34"/>
+                                <color key="backgroundColor" name="PalphonePink"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="whp-e4-7ey">
+                                <rect key="frame" x="35" y="779.66666666666663" width="323" height="38.333333333333371"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Login">
+                                    <color key="baseBackgroundColor" systemColor="linkColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="loginButtonPressed:" destination="tc3-9B-oCE" eventType="touchUpInside" id="mQF-Gj-0YC"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="hamedgholami771992@gmail.com" borderStyle="roundedRect" placeholder="Username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gn4-c6-9fy">
+                                <rect key="frame" x="35" y="676.66666666666663" width="323" height="34"/>
+                                <color key="backgroundColor" name="PalphonePink"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Q9q-ew-dq5"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="uvu-gT-5dW" firstAttribute="centerY" secondItem="vZg-Qh-HYz" secondAttribute="centerY" id="28M-oP-5Iv"/>
+                            <constraint firstItem="Q9q-ew-dq5" firstAttribute="trailing" secondItem="whp-e4-7ey" secondAttribute="trailing" constant="35" id="3P1-bD-hlc"/>
+                            <constraint firstItem="uvu-gT-5dW" firstAttribute="centerX" secondItem="vZg-Qh-HYz" secondAttribute="centerX" id="LG5-9a-8yT"/>
+                            <constraint firstItem="whp-e4-7ey" firstAttribute="bottom" secondItem="Q9q-ew-dq5" secondAttribute="bottom" id="YFQ-p6-jum"/>
+                            <constraint firstItem="gn4-c6-9fy" firstAttribute="leading" secondItem="Q9q-ew-dq5" secondAttribute="leading" constant="35" id="eMN-YL-olV"/>
+                            <constraint firstItem="Q9q-ew-dq5" firstAttribute="trailing" secondItem="gn4-c6-9fy" secondAttribute="trailing" constant="35" id="l9H-tj-gFb"/>
+                            <constraint firstItem="Q9q-ew-dq5" firstAttribute="trailing" secondItem="uvu-gT-5dW" secondAttribute="trailing" constant="35.333333333333371" id="nB6-ne-CLI"/>
+                            <constraint firstItem="whp-e4-7ey" firstAttribute="top" secondItem="vlm-7O-x5N" secondAttribute="bottom" constant="27" id="nbW-fR-AT5"/>
+                            <constraint firstItem="Q9q-ew-dq5" firstAttribute="trailing" secondItem="vlm-7O-x5N" secondAttribute="trailing" constant="35" id="pr3-bD-HkJ"/>
+                            <constraint firstItem="vlm-7O-x5N" firstAttribute="leading" secondItem="Q9q-ew-dq5" secondAttribute="leading" constant="35" id="q4C-mV-5OF"/>
+                            <constraint firstItem="vlm-7O-x5N" firstAttribute="top" secondItem="gn4-c6-9fy" secondAttribute="bottom" constant="8" id="rlQ-iG-JGp"/>
+                            <constraint firstItem="whp-e4-7ey" firstAttribute="leading" secondItem="Q9q-ew-dq5" secondAttribute="leading" constant="35" id="x8Z-j4-vGg"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="bjZ-sY-0QR"/>
+                    <connections>
+                        <outlet property="emailTextField" destination="gn4-c6-9fy" id="oTo-kj-ufJ"/>
+                        <outlet property="loginButton" destination="whp-e4-7ey" id="NKu-S8-Anx"/>
+                        <outlet property="passwordTextField" destination="vlm-7O-x5N" id="OKC-XP-qHT"/>
+                        <segue destination="Fgo-dw-sre" kind="show" identifier="loginToCallData" id="1Gu-jW-0PI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f1Q-lo-T4o" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1733.5877862595419" y="2.8169014084507045"/>
+        </scene>
+        <!--Your Table View Controller-->
+        <scene sceneID="Elj-XZ-8xk">
+            <objects>
+                <tableViewController storyboardIdentifier="reportsViewController" id="Fgo-dw-sre" customClass="YourTableViewController" customModule="Palphone_Analysis" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="JjS-N4-mSD">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="bbv-De-WF9">
+                                <rect key="frame" x="0.0" y="50" width="393" height="47.666667938232422"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="CallReportsID" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bbv-De-WF9" id="t5r-cA-D0u">
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="47.666667938232422"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Fgo-dw-sre" id="BK4-Yu-reg"/>
+                            <outlet property="delegate" destination="Fgo-dw-sre" id="gCm-9U-EDD"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="djk-LD-7E5">
+                        <barButtonItem key="rightBarButtonItem" title="Log Out" id="TjK-6C-81a">
+                            <connections>
+                                <action selector="logOutPressed:" destination="Fgo-dw-sre" id="mgu-oJ-y3f"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HJW-SN-BTG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2595" y="3"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="kHR-cL-T95">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="EvI-H5-sy5" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="zRm-nc-EW8">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Vs9-We-7Je"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gg7-xc-vYd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="23.664122137404579" y="2.8169014084507045"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="PalphonePink">
+            <color red="0.88200002908706665" green="0.11500000208616257" blue="0.28200000524520874" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
