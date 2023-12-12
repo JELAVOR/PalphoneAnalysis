@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2A2356EC2B25A50D0097BA65 /* ReportModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2356EB2B25A50D0097BA65 /* ReportModel.swift */; };
-		2A53013D2B1F26C7003F4587 /* CallDataViewController CallDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A53013C2B1F26C7003F4587 /* CallDataViewController CallDataViewController.swift */; };
+		2A53013D2B1F26C7003F4587 /* CallDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A53013C2B1F26C7003F4587 /* CallDataViewController.swift */; };
 		2A8F2E312B27338000C5CA39 /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8F2E302B27338000C5CA39 /* ReportViewController.swift */; };
 		2A8F2E352B273D1C00C5CA39 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A8F2E342B273D1C00C5CA39 /* Main.storyboard */; };
 		2ACB4A4F2B20A26F008D1E75 /* LoginDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACB4A4E2B20A26F008D1E75 /* LoginDataManager.swift */; };
@@ -24,7 +24,7 @@
 
 /* Begin PBXFileReference section */
 		2A2356EB2B25A50D0097BA65 /* ReportModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportModel.swift; sourceTree = "<group>"; };
-		2A53013C2B1F26C7003F4587 /* CallDataViewController CallDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CallDataViewController CallDataViewController.swift"; sourceTree = "<group>"; };
+		2A53013C2B1F26C7003F4587 /* CallDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallDataViewController.swift; sourceTree = "<group>"; };
 		2A8F2E302B27338000C5CA39 /* ReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
 		2A8F2E342B273D1C00C5CA39 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		2ACB4A4E2B20A26F008D1E75 /* LoginDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginDataManager.swift; sourceTree = "<group>"; };
@@ -65,7 +65,7 @@
 			children = (
 				2ACF0C3E2B1C769000B53999 /* ViewController.swift */,
 				2ACB4A542B20A938008D1E75 /* LoginViewController.swift */,
-				2A53013C2B1F26C7003F4587 /* CallDataViewController CallDataViewController.swift */,
+				2A53013C2B1F26C7003F4587 /* CallDataViewController.swift */,
 				2A8F2E302B27338000C5CA39 /* ReportViewController.swift */,
 			);
 			path = Controllers;
@@ -187,7 +187,7 @@
 				2ACF0C3F2B1C769000B53999 /* ViewController.swift in Sources */,
 				2A8F2E312B27338000C5CA39 /* ReportViewController.swift in Sources */,
 				2ACF0C3B2B1C769000B53999 /* AppDelegate.swift in Sources */,
-				2A53013D2B1F26C7003F4587 /* CallDataViewController CallDataViewController.swift in Sources */,
+				2A53013D2B1F26C7003F4587 /* CallDataViewController.swift in Sources */,
 				2ACF0C3D2B1C769000B53999 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -42,3 +42,9 @@ struct Tokens: Codable {
         case refreshToken = "refresh_token"
     }
 }
+
+
+
+struct Aliz2: Codable{
+    let tokens: Tokens
+}
