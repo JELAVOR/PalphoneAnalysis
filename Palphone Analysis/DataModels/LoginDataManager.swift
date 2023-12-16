@@ -1,17 +1,11 @@
-//
-//  LoginDataManager.swift
-//  Palphone Analysis
-//
-//  Created by palphone ios on 12/6/23.
-//
-
 import Foundation
 
-// MARK: - Welcome
+// MARK: - Aliz
 struct Aliz: Codable {
     let tokens: Tokens
     let permissions: [Permission]
 }
+
 // MARK: - Permission
 struct Permission: Codable {
     let name: String
@@ -21,11 +15,11 @@ struct Permission: Codable {
 
 // MARK: - Action
 struct Action: Codable {
-    let name: Name
+    let name: ActionName
     let value: Int
 }
 
-enum Name: String, Codable {
+enum ActionName: String, Codable {
     case create = "create"
     case delete = "delete"
     case empty = "*"
@@ -43,8 +37,7 @@ struct Tokens: Codable {
     }
 }
 
-
-
-struct Aliz2: Codable{
+// MARK: - Aliz2
+struct Aliz2: Codable {
     let tokens: Tokens
 }

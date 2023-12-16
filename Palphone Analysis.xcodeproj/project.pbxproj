@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		2A2356EC2B25A50D0097BA65 /* ReportModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2356EB2B25A50D0097BA65 /* ReportModel.swift */; };
 		2A53013D2B1F26C7003F4587 /* CallDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A53013C2B1F26C7003F4587 /* CallDataViewController.swift */; };
-		2A8F2E312B27338000C5CA39 /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8F2E302B27338000C5CA39 /* ReportViewController.swift */; };
 		2A8F2E352B273D1C00C5CA39 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A8F2E342B273D1C00C5CA39 /* Main.storyboard */; };
+		2AB15D562B2D92AC00424466 /* CallDataTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2AB15D552B2D92AC00424466 /* CallDataTableViewCell.xib */; };
 		2ACB4A4F2B20A26F008D1E75 /* LoginDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACB4A4E2B20A26F008D1E75 /* LoginDataManager.swift */; };
 		2ACB4A522B20A7D3008D1E75 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 2ACB4A512B20A7D3008D1E75 /* Alamofire */; };
 		2ACB4A552B20A938008D1E75 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACB4A542B20A938008D1E75 /* LoginViewController.swift */; };
@@ -25,8 +25,8 @@
 /* Begin PBXFileReference section */
 		2A2356EB2B25A50D0097BA65 /* ReportModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportModel.swift; sourceTree = "<group>"; };
 		2A53013C2B1F26C7003F4587 /* CallDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallDataViewController.swift; sourceTree = "<group>"; };
-		2A8F2E302B27338000C5CA39 /* ReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
 		2A8F2E342B273D1C00C5CA39 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		2AB15D552B2D92AC00424466 /* CallDataTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CallDataTableViewCell.xib; sourceTree = "<group>"; };
 		2ACB4A4E2B20A26F008D1E75 /* LoginDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginDataManager.swift; sourceTree = "<group>"; };
 		2ACB4A542B20A938008D1E75 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		2ACF0C372B1C769000B53999 /* Palphone Analysis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Palphone Analysis.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -66,7 +66,6 @@
 				2ACF0C3E2B1C769000B53999 /* ViewController.swift */,
 				2ACB4A542B20A938008D1E75 /* LoginViewController.swift */,
 				2A53013C2B1F26C7003F4587 /* CallDataViewController.swift */,
-				2A8F2E302B27338000C5CA39 /* ReportViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -74,6 +73,7 @@
 		2ACF0C2E2B1C769000B53999 = {
 			isa = PBXGroup;
 			children = (
+				2AB15D552B2D92AC00424466 /* CallDataTableViewCell.xib */,
 				2ACF0C392B1C769000B53999 /* Palphone Analysis */,
 				2ACF0C382B1C769000B53999 /* Products */,
 			);
@@ -170,6 +170,7 @@
 				2A8F2E352B273D1C00C5CA39 /* Main.storyboard in Resources */,
 				2ACF0C4A2B1C769100B53999 /* LaunchScreen.storyboard in Resources */,
 				2ACF0C472B1C769100B53999 /* Assets.xcassets in Resources */,
+				2AB15D562B2D92AC00424466 /* CallDataTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -185,7 +186,6 @@
 				2ACF0C452B1C769000B53999 /* Palphone_Analysis.xcdatamodeld in Sources */,
 				2ACB4A4F2B20A26F008D1E75 /* LoginDataManager.swift in Sources */,
 				2ACF0C3F2B1C769000B53999 /* ViewController.swift in Sources */,
-				2A8F2E312B27338000C5CA39 /* ReportViewController.swift in Sources */,
 				2ACF0C3B2B1C769000B53999 /* AppDelegate.swift in Sources */,
 				2A53013D2B1F26C7003F4587 /* CallDataViewController.swift in Sources */,
 				2ACF0C3D2B1C769000B53999 /* SceneDelegate.swift in Sources */,

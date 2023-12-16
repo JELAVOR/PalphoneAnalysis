@@ -1,49 +1,114 @@
-//
-//  reportModel.swift
-//  Palphone Analysis
-//
-//  Created by palphone ios on 12/10/23.
-//
 import Foundation
 
+//struct Welcome: Codable {
+//    let data: [Talk]
+//    let meta: Meta
+//    let aliz: Aliz?
+//    let aliz2: Aliz2?
+//}
+//
+//struct Talk: Codable {
+//    let talkId: Int
+//    let languageId: Int
+//    let createdAt: String
+//    let duration: Int
+//    let status: Int
+//    let plan: Int
+//    let mediaDomain: String
+//    let reconnectionCount: Int
+//    let reason: Int
+//    let finisherId: Int
+//    let pals: [TalkPal]
+//    let type: Int
+//    
+//    enum CodingKeys: String, CodingKey {
+//        case talkId, languageId, createdAt, duration, status, plan
+//        case mediaDomain, reconnectionCount, reason, finisherId, pals, type
+//    }
+//}
+//
+//struct TalkPal: Codable {
+//    let talkId: Int
+//    let accountId: Int
+//    let characterId: Int
+//    let platform: Int
+//    let appVersion: AppVersion
+//    let ip: String
+//    let country: Country
+//    let internetQuality: Int
+//    
+//    enum CodingKeys: String, CodingKey {
+//        case talkId, accountId, characterId, platform, appVersion, ip, country, internetQuality
+//    }
+//}
+//
+//enum AppVersion: String, Codable {
+//    case v121 = "1.2.1"
+//    case v206 = "2.0.6"
+//    case v208 = "2.0.8"
+//}
+//
+//enum Country: String, Codable {
+//    case algeria = "Algeria"
+//    case egypt = "Egypt"
+//    case empty = ""
+//    case india = "India"
+//    case iran = "Iran"
+//    case pakistan = "Pakistan"
+//}
+//
+//struct Meta: Codable {
+//    let total: Int
+//    let perPage: Int
+//    let currentPage: Int
+//    let lastPage: Int
+//}
+
+// MARK: - Welcome
 struct Welcome: Codable {
-    let tokens: Tokens
-    let permissions: [Permission] 
-    let data: [Datum]
+    let data: [Talk]
     let meta: Meta
 }
-struct Datum: Codable {
-    let talk_id: Int
-    let language_id: Int
-    let created_at: String
-    let duration: Int
-    let status: Int
-    let plan: Int
-    let media_domain: String
-    let reconnection_count: Int
-    let reason: Int
-    let finisher_id: Int
-    let pals: [Pal]
+
+// MARK: - Datum
+struct Talk: Codable {
+    let talkId, languageId: Int
+    let createdAt: String
+    let duration, status, plan: Int
+    let mediaDomain: String
+    let reconnectionCount, reason, finisherID: Int
+    let pals: [TalkPal]
     let type: Int
 
     enum CodingKeys: String, CodingKey {
-        case talk_id, language_id, created_at, duration, status, plan
-        case media_domain, reconnection_count, reason, finisher_id, pals, type
+        case talkId = "talk_id"
+        case languageId = "language_id"
+        case createdAt = "created_at"
+        case duration, status, plan
+        case mediaDomain = "media_domain"
+        case reconnectionCount = "reconnection_count"
+        case reason
+        case finisherID = "finisher_id"
+        case pals, type
     }
 }
 
-struct Pal: Codable {
-    let talk_id: Int
-    let account_id: Int
-    let character_id: Int
-    let platform: Int
-    let app_version: String
+// MARK: - Pal
+struct TalkPal: Codable {
+    let talkId, accountId, characterId, platform: Int
+    let appVersion: AppVersion
     let ip: String
-    let country: String
-    let internet_quality: Int
+    let country: Country
+    let internetQuality: Int
 
     enum CodingKeys: String, CodingKey {
-        case talk_id, account_id, character_id, platform, app_version, ip, country, internet_quality
+        case talkId = "talk_id"
+        case accountId = "account_id"
+        case characterId = "character_id"
+        case platform
+        case appVersion = "app_version"
+        case ip, country
+        case internetQuality = "internet_quality"
     }
 }
 
@@ -62,30 +127,14 @@ enum Country: String, Codable {
     case pakistan = "Pakistan"
 }
 
+// MARK: - Meta
 struct Meta: Codable {
-    let total: Int
-    let per_page: Int
-    let current_page: Int
-    let last_page: Int
-}
+    let total, perPage, currentPage, lastPage: Int
 
-struct Talk: Codable {
-    let talkId: Int
-    let languageId: Int
-    let createdAt: String
-    let duration: Int
-    let status: Int
-    let pals: [Pal]
-    // Add other properties as needed
-
-    struct Pal: Codable {
-        let accountId: Int
-        let characterId: Int
-        let platform: Int
-        let appVersion: String
-        let ip: String
-        let country: String
-        let internetQuality: Int
-        // Add other properties as needed
+    enum CodingKeys: String, CodingKey {
+        case total
+        case perPage = "per_page"
+        case currentPage = "current_page"
+        case lastPage = "last_page"
     }
 }
