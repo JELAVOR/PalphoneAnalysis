@@ -78,12 +78,21 @@ class AccessTokenInterceptor: RequestInterceptor {
 class YourTableViewController: UITableViewController {
     var callData: Welcome?
 
+    @IBOutlet var alirezaTable: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.hidesBackButton = true
+        fetchCallDataReports()
         setupTableView()
         UserDefaults.standard.set("invalid_token", forKey: "AccessToken")
-        fetchCallDataReports()
+        alirezaTable?.translatesAutoresizingMaskIntoConstraints = false
+        alirezaTable.register(CallDataTableViewCell.self, forCellReuseIdentifier: CallDataTableViewCell.identifier)
+
+        self.alirezaTable.reloadData()
         
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        self.alirezaTable.reloadData()
     }
 
     @IBAction func logOutPressed(_ sender: Any) {
@@ -92,18 +101,18 @@ class YourTableViewController: UITableViewController {
 
     // MARK: - Private Methods
     private func setupTableView() {
-        tableView.backgroundColor = UIColor.cyan
-        tableView.separatorColor = UIColor.white
-        tableView.tableHeaderView?.backgroundColor = UIColor.cyan
-        tableView.tableFooterView?.backgroundColor = UIColor.cyan
+//        tableView.backgroundColor = UIColor.cyan
+//        tableView.separatorColor = UIColor.white
+//        tableView.tableHeaderView?.backgroundColor = UIColor.cyan
+//        tableView.tableFooterView?.backgroundColor = UIColor.cyan
+//        
         
-        
-        self.tableView.delegate = self
-        self.tableView.dataSource = self
+        self.alirezaTable.delegate = self
+        self.alirezaTable.dataSource = self
 
         // Register the XIB file
-        let nib = UINib(nibName: "CallDataTableViewCell", bundle: nil)
-        tableView.register(nib, forCellReuseIdentifier: CallDataTableViewCell.identifier)
+//        let nib = UINib(nibName: "CallDataTableViewCell", bundle: nil)
+//        tableView.register(nib, forCellReuseIdentifier: CallDataTableViewCell.identifier)
    
 
     }
@@ -123,7 +132,7 @@ class YourTableViewController: UITableViewController {
                     self.callData = responseData
 
                     DispatchQueue.main.async {
-                        self.tableView.reloadData()
+                        self.alirezaTable.reloadData()
                     }
 
                     print("Call data fetched successfully")
@@ -138,7 +147,7 @@ class YourTableViewController: UITableViewController {
                     if let data = response.data {
                         let responseString = String(data: data, encoding: .utf8)
                         self.callData = response.value
-                        self.tableView.reloadData()
+                        self.alirezaTable.reloadData()
                         
                         print("Response String: \(responseString ?? "Unable to convert data to string") ++++ \(data) +++ \(response.value) \(response)")
                     }
@@ -164,7 +173,7 @@ class YourTableViewController: UITableViewController {
                 print("Call data fetched successfully")
 
                 DispatchQueue.main.async {
-                    self.tableView.reloadData()
+                    self.alirezaTable.reloadData()
                 }
 
                 // Accessing and recognizing the fetched data
@@ -198,17 +207,25 @@ extension YourTableViewController {
         // Safely unwrap callData and its data property
         var rowCount = 0
         DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
-            rowCount = self.callData?.data.count ?? 0
+           rowCount = self.callData?.data.count ?? 0
             print("Number of Rows: \(rowCount) +++ \(self.callData?.data)")
-            self.tableView.reloadData()
         }
         return rowCount
     }
-
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let view = UIView()
+        view.backgroundColor = .palphonePink
+        view.frame = CGRect(x: 10, y: 60, width: 100, height: 60)
+        return view
     }
 
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80
+    }
+
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
 
     // MARK: - UITableViewDataSource
 //
@@ -224,6 +241,7 @@ extension YourTableViewController {
             return UITableViewCell()
         }
 
+        print("Configuring cell for Talk ID: \(indexPath.row) \(callData?.data[indexPath.row])")
         if let talk = callData?.data[safe: indexPath.row] {
             print("Configuring cell for Talk ID: \(talk.talkId)")
             cell.talkIdLabel.text = "Talk ID: \(talk.talkId)"
@@ -236,6 +254,7 @@ extension YourTableViewController {
                 let characterID = pal.characterId
                 let country = pal.country
                 print("Pal - Account ID: \(accountID), Character ID: \(characterID), Country: \(country)")
+                self.alirezaTable.reloadData()
             }
         }
 
