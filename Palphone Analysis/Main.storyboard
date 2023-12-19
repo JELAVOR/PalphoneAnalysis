@@ -61,12 +61,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Palphone Analysis" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uvu-gT-5dW">
-                                <rect key="frame" x="35.333333333333343" y="403.33333333333331" width="322.33333333333326" height="45.666666666666686"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="38"/>
-                                <color key="textColor" name="PalphonePink"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Ha890180937" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vlm-7O-x5N">
                                 <rect key="frame" x="35" y="718.66666666666663" width="323" height="34"/>
                                 <color key="backgroundColor" name="PalphonePink"/>
@@ -91,6 +85,16 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Palphone Analysis" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uvu-gT-5dW">
+                                <rect key="frame" x="58" y="407" width="277" height="38"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="277" id="Edt-DU-o83"/>
+                                    <constraint firstAttribute="height" constant="38" id="gXE-CQ-BE9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="31"/>
+                                <color key="textColor" name="PalphonePink"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Q9q-ew-dq5"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -292,9 +296,60 @@
             </objects>
             <point key="canvasLocation" x="3316.7938931297708" y="-19.014084507042256"/>
         </scene>
+        <!--Item 2-->
+        <scene sceneID="Tcd-2Q-GDz">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AJO-o8-qPz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewController id="yJK-c2-ERw" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6gU-Fw-sT8">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="MDN-Kc-pBs"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 2" id="Ibg-cr-2nt"/>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="6185" y="327"/>
+        </scene>
+        <!--Item 1-->
+        <scene sceneID="I4e-T3-mAC">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hBp-nr-2zt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewController id="El8-we-RaR" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fhN-fI-hfl">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="Myu-pW-fAw"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 1" id="Urr-sd-yny"/>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="6126" y="-381"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="Mix-xZ-xw6">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6ar-e9-ZZt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tabBarController id="QhD-wl-hkh" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="2KV-WT-K2r">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="El8-we-RaR" kind="relationship" relationship="viewControllers" id="Nxu-pW-X6v"/>
+                        <segue destination="yJK-c2-ERw" kind="relationship" relationship="viewControllers" id="5ma-7K-ztg"/>
+                    </connections>
+                </tabBarController>
+            </objects>
+            <point key="canvasLocation" x="5045" y="-30"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="kHR-cL-T95">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gg7-xc-vYd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="EvI-H5-sy5" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="zRm-nc-EW8">
@@ -306,7 +361,6 @@
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Vs9-We-7Je"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Gg7-xc-vYd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="23.664122137404579" y="2.8169014084507045"/>
         </scene>
@@ -316,7 +370,7 @@
             <color red="0.88200002908706665" green="0.11500000208616257" blue="0.28200000524520874" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="linkColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

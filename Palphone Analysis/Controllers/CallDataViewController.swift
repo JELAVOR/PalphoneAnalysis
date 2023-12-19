@@ -77,12 +77,13 @@ class AccessTokenInterceptor: RequestInterceptor {
 //MARK: Table View
 class YourTableViewController: UITableViewController {
     var callData: Welcome?
-
+    var currentPage = 1
+    var totalRecords = 0
     @IBOutlet var alirezaTable: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.hidesBackButton = true
-        fetchCallDataReports()
+        fetchCallDataReports(page:2)
         setupTableView()
         UserDefaults.standard.set("invalid_token", forKey: "AccessToken")
         alirezaTable?.translatesAutoresizingMaskIntoConstraints = false
@@ -94,7 +95,11 @@ class YourTableViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         self.alirezaTable.reloadData()
     }
-
+    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
+           // Disable scrolling by resetting the content offset to zero
+           scrollView.contentOffset = CGPoint(x: 0, y: 0)
+       }
+    
     @IBAction func logOutPressed(_ sender: Any) {
         navigationController?.popToRootViewController(animated: true)
     }
@@ -118,12 +123,12 @@ class YourTableViewController: UITableViewController {
     }
 
     // MARK: - Networking
-
-    private func fetchData(with jwt: String, from url: URL, completion: @escaping (Result<Welcome, Error>) -> Void) {
+    private func fetchData(with jwt: String, page: Int, from url: URL, completion: @escaping (Result<Welcome, Error>) -> Void) {
         var request = URLRequest(url: url)
         let interceptor = AccessTokenInterceptor()
+        let parameters: [String: Any] = ["page": page]
 
-        AF.request(request, interceptor: interceptor)
+        AF.request(url, parameters: parameters, interceptor: interceptor)
             .validate(statusCode: 200..<300)
             .responseDecodable(of: Welcome.self) { response in
                 switch response.result {
@@ -131,11 +136,14 @@ class YourTableViewController: UITableViewController {
                     completion(.success(responseData))
                     self.callData = responseData
 
+                    // Assuming your meta data has a total count
+                    self.totalRecords = responseData.meta.total
+
                     DispatchQueue.main.async {
                         self.alirezaTable.reloadData()
                     }
 
-                    print("Call data fetched successfully")
+                    print("Call data fetched successfully +++++++ totalRecords: \(self.totalRecords)")
 
                 case .failure(let error):
                     if let statusCode = response.response?.statusCode, statusCode == 401 {
@@ -148,14 +156,28 @@ class YourTableViewController: UITableViewController {
                         let responseString = String(data: data, encoding: .utf8)
                         self.callData = response.value
                         self.alirezaTable.reloadData()
-                        
+
                         print("Response String: \(responseString ?? "Unable to convert data to string") ++++ \(data) +++ \(response.value) \(response)")
                     }
                 }
             }
     }
 
-    private func fetchCallDataReports() {
+
+    private func fetchCallDataReports(page: Int) {
+        
+        
+        func scrollViewDidScroll(_ scrollView: UIScrollView) {
+            let offsetY = scrollView.contentOffset.y
+            let contentHeight = scrollView.contentSize.height
+
+            if offsetY > contentHeight - scrollView.frame.height {
+                // Load more data when reaching the end
+                currentPage += 1
+                fetchCallDataReports(page: currentPage)
+            }
+        }
+
         guard let accessToken = UserDefaults.standard.string(forKey: "AccessToken") else {
             return
         }
@@ -166,12 +188,11 @@ class YourTableViewController: UITableViewController {
             return
         }
 
-        fetchData(with: accessToken, from: url) { result in
+        fetchData(with: accessToken, page: page, from: url) { result in
             switch result {
             case .success(let callData):
                 self.callData = callData
-                print("Call data fetched successfully")
-
+                self.totalRecords = callData.meta.total
                 DispatchQueue.main.async {
                     self.alirezaTable.reloadData()
                 }
