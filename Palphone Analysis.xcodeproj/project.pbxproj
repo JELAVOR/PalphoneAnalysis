@@ -53,6 +53,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2AC128DA2B332C1700B24BC6 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 		2ACB4A4D2B20A22C008D1E75 /* DataModels */ = {
 			isa = PBXGroup;
 			children = (
@@ -68,6 +75,7 @@
 				2ACF0C3E2B1C769000B53999 /* ViewController.swift */,
 				2ACB4A542B20A938008D1E75 /* LoginViewController.swift */,
 				2A53013C2B1F26C7003F4587 /* CallDataViewController.swift */,
+				2ADE30A72B30671B009FD775 /* DetailsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -91,6 +99,7 @@
 		2ACF0C392B1C769000B53999 /* Palphone Analysis */ = {
 			isa = PBXGroup;
 			children = (
+				2AC128DA2B332C1700B24BC6 /* Data */,
 				2A8F2E342B273D1C00C5CA39 /* Main.storyboard */,
 				2ADE30A92B306FBB009FD775 /* DetailsCostumCellTableViewCell.swift */,
 				2ACF0C3A2B1C769000B53999 /* AppDelegate.swift */,
@@ -101,7 +110,6 @@
 				2ACF0C482B1C769100B53999 /* LaunchScreen.storyboard */,
 				2ACF0C4B2B1C769100B53999 /* Info.plist */,
 				2ACF0C432B1C769000B53999 /* Palphone_Analysis.xcdatamodeld */,
-				2ADE30A72B30671B009FD775 /* DetailsViewController.swift */,
 			);
 			path = "Palphone Analysis";
 			sourceTree = "<group>";

@@ -23,6 +23,7 @@ class ViewController: UIViewController {
         }
     }
     
+    
     @IBAction func loginButtonPressed(_ sender: UIButton) {
         
         let accessToken = "AccessToken"
@@ -34,7 +35,7 @@ class ViewController: UIViewController {
     
     private func navigateToTableView() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        guard let tableViewController = storyboard.instantiateViewController(withIdentifier: "reportsViewController") as? YourTableViewController else {
+        guard let tableViewController = storyboard.instantiateViewController(withIdentifier: "DetailsTable") as? DetailsViewController else {
             return
         }
         
@@ -46,7 +47,7 @@ class ViewController: UIViewController {
 class NavigationUtility {
     static func navigateToTableView(from viewController: UIViewController) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        guard let tableViewController = storyboard.instantiateViewController(withIdentifier: "reportsViewController") as? YourTableViewController else {
+        guard let tableViewController = storyboard.instantiateViewController(withIdentifier: "DetailsTable") as? DetailsViewController else {
             return
         }
         

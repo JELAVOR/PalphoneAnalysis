@@ -12,14 +12,24 @@ class DetailsViewController: UIViewController, UITableViewDelegate, UITableViewD
     var loadingIndicatorView: UIActivityIndicatorView?
     
     override func viewDidLoad() {
-           super.viewDidLoad()
-           setupNavigationBar()
-           setupLoadingView()
-           fetchCallDataReports(page: 2)
-           detailsTableView.delegate = self
-           detailsTableView.dataSource = self
-           setupLoadingIndicator()
-       }
+            super.viewDidLoad()
+//            setupNavigationBar()
+            setupLoadingView()
+            fetchCallDataReports(page: 2)
+            detailsTableView.delegate = self
+            detailsTableView.dataSource = self
+            setupLoadingIndicator()
+
+            // 1. Hide the back button
+            navigationItem.hidesBackButton = true
+        }
+    
+    @IBAction func logOutPressed(_ sender: Any) {
+        UserDefaults.standard.removeObject(forKey: "AccessToken")
+        navigationController?.popToRootViewController(animated: true)
+
+    }
+    
     
     private func showLoadingView() {
             loadingView?.isHidden = false
@@ -28,30 +38,30 @@ class DetailsViewController: UIViewController, UITableViewDelegate, UITableViewD
         private func hideLoadingView() {
             loadingView?.isHidden = true
         }
-    private func setupNavigationBar() {
-           // Create a separator view
-           let separatorView = UIView()
-           separatorView.backgroundColor = .lightGray  // Adjust the color as needed
-
-           // Add the separator view as a subview to the navigation bar
-           if let navigationBar = self.navigationController?.navigationBar {
-               navigationBar.addSubview(separatorView)
-
-               // Set up constraints for the separator view
-               separatorView.translatesAutoresizingMaskIntoConstraints = false
-               NSLayoutConstraint.activate([
-                   separatorView.topAnchor.constraint(equalTo: navigationBar.bottomAnchor),
-                   separatorView.leadingAnchor.constraint(equalTo: navigationBar.leadingAnchor),
-                   separatorView.trailingAnchor.constraint(equalTo: navigationBar.trailingAnchor),
-                   separatorView.heightAnchor.constraint(equalToConstant: 1)  // Adjust the height as needed
-               ])
-           }
-       }
+//    private func setupNavigationBar() {
+//           // Create a separator view
+//           let separatorView = UIView()
+//           separatorView.backgroundColor = .lightGray  // Adjust the color as needed
+//
+//           // Add the separator view as a subview to the navigation bar
+//           if let navigationBar = self.navigationController?.navigationBar {
+//               navigationBar.addSubview(separatorView)
+//
+//               // Set up constraints for the separator view
+//               separatorView.translatesAutoresizingMaskIntoConstraints = false
+//               NSLayoutConstraint.activate([
+//                   separatorView.topAnchor.constraint(equalTo: navigationBar.bottomAnchor),
+//                   separatorView.leadingAnchor.constraint(equalTo: navigationBar.leadingAnchor),
+//                   separatorView.trailingAnchor.constraint(equalTo: navigationBar.trailingAnchor),
+//                   separatorView.heightAnchor.constraint(equalToConstant: 1)  // Adjust the height as needed
+//               ])
+//           }
+//       }
     private func setupLoadingView() {
             loadingView = UIView(frame: CGRect(x: 0, y: 0, width: detailsTableView.bounds.width, height: detailsTableView.bounds.height))
             loadingView?.backgroundColor = .white  // Adjust the color as needed
 
-            let activityIndicator = UIActivityIndicatorView(style: .gray)
+        let activityIndicator = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.medium)
             activityIndicator.center = loadingView?.center ?? CGPoint.zero
             activityIndicator.startAnimating()
 
@@ -70,7 +80,7 @@ class DetailsViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         for talk in self.callData!.data {
             // Accessing pals for each talk
-            for pal in talk.pals {
+            for _ in talk.pals {
                 var dataForCell = callData?.data[indexPath.row]
                 cell.accountId.text = "\(dataForCell!.talkId)"
                 cell.countryLabel.text = "\(getLanguageString(from: dataForCell!.languageId))"
@@ -83,7 +93,7 @@ class DetailsViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     private func setupLoadingIndicator() {
-        loadingIndicatorView = UIActivityIndicatorView(style: .gray)
+        loadingIndicatorView = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.medium)
         loadingIndicatorView?.frame = CGRect(x: 0, y: 0, width: detailsTableView.bounds.width, height: 44)
         loadingIndicatorView?.hidesWhenStopped = true
         detailsTableView.tableFooterView = loadingIndicatorView

@@ -17,11 +17,14 @@ class CallDataTableViewCell: UITableViewCell {
         super.awakeFromNib()
     }
 }
+enum CustomError:Error{
+    case NoAccount
+}
 
 class AccessTokenInterceptor: RequestInterceptor {
     func adapt(_ urlRequest: URLRequest, for session: Session, completion: @escaping (Result<URLRequest, Error>) -> Void) {
         guard let accessToken = UserDefaults.standard.string(forKey: "AccessToken") else {
-            completion(.failure(fatalError("Access token not found")))
+            completion(.failure(CustomError.NoAccount))
             return
         }
         var newRequest = urlRequest
