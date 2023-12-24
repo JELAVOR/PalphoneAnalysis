@@ -1,122 +1,33 @@
+//
+//  WelcomeResponse.swift
+//  Palphone Analysis
+//
+//  Created by palphone ios on 12/24/23.
+//
+
 import Foundation
-
-//struct Welcome: Codable {
-//    let data: [Talk]
-//    let meta: Meta
-//    let aliz: Aliz?
-//    let aliz2: Aliz2?
-//}
-//
-//struct Talk: Codable {
-//    let talkId: Int
-//    let languageId: Int
-//    let createdAt: String
-//    let duration: Int
-//    let status: Int
-//    let plan: Int
-//    let mediaDomain: String
-//    let reconnectionCount: Int
-//    let reason: Int
-//    let finisherId: Int
-//    let pals: [TalkPal]
-//    let type: Int
-//    
-//    enum CodingKeys: String, CodingKey {
-//        case talkId, languageId, createdAt, duration, status, plan
-//        case mediaDomain, reconnectionCount, reason, finisherId, pals, type
-//    }
-//}
-//
-//struct TalkPal: Codable {
-//    let talkId: Int
-//    let accountId: Int
-//    let characterId: Int
-//    let platform: Int
-//    let appVersion: AppVersion
-//    let ip: String
-//    let country: Country
-//    let internetQuality: Int
-//    
-//    enum CodingKeys: String, CodingKey {
-//        case talkId, accountId, characterId, platform, appVersion, ip, country, internetQuality
-//    }
-//}
-//
-//enum AppVersion: String, Codable {
-//    case v121 = "1.2.1"
-//    case v206 = "2.0.6"
-//    case v208 = "2.0.8"
-//}
-//
-//enum Country: String, Codable {
-//    case algeria = "Algeria"
-//    case egypt = "Egypt"
-//    case empty = ""
-//    case india = "India"
-//    case iran = "Iran"
-//    case pakistan = "Pakistan"
-//}
-//
-//struct Meta: Codable {
-//    let total: Int
-//    let perPage: Int
-//    let currentPage: Int
-//    let lastPage: Int
-//}
-
-// MARK: - Welcome
-struct Welcome: Codable {
-    var data: [Talk]
+// MARK: - WelcomeResponse
+struct WelcomeResponse: Codable {
     let meta: Meta
+    let data: [WelcomeData]
 }
 
-// MARK: - Datum
-struct Talk: Codable {
-    let talkId, languageId: Int
-    let createdAt: String
-    let duration, status, plan: Int
-    let mediaDomain: String
-    let reconnectionCount, reason, finisherID: Int
-    let pals: [TalkPal]
-    let type: Int
-
-    enum CodingKeys: String, CodingKey {
-        case talkId = "talk_id"
-        case languageId = "language_id"
-        case createdAt = "created_at"
-        case duration, status, plan
-        case mediaDomain = "media_domain"
-        case reconnectionCount = "reconnection_count"
-        case reason
-        case finisherID = "finisher_id"
-        case pals, type
-    }
-}
-
-// MARK: - Pal
-struct TalkPal: Codable {
-    let talkId, accountId, characterId, platform: Int
-    let appVersion: AppVersion
-    let ip: String
+// MARK: - WelcomeData
+struct WelcomeData: Codable {
+    let id, name: String
+    let status: Bool
+    let version: AppVersion
     let country: Country
-    let internetQuality: Int
-
-    enum CodingKeys: String, CodingKey {
-        case talkId = "talk_id"
-        case accountId = "account_id"
-        case characterId = "character_id"
-        case platform
-        case appVersion = "app_version"
-        case ip, country
-        case internetQuality = "internet_quality"
-    }
 }
 
+// MARK: - AppVersion
 enum AppVersion: String, Codable {
     case the121 = "1.2.1"
     case the206 = "2.0.6"
     case the208 = "2.0.8"
 }
+
+// MARK: - Country
 enum Country: String, Codable {
     case afghanistan = "Afghanistan"
     case albania = "Albania"
@@ -317,41 +228,27 @@ enum Country: String, Codable {
     case empty = ""
 
     // Helper function to get an array of all countries
- 
-
-        static var allCases: [Country] {
-            return [.afghanistan, .albania, .algeria, .andorra, .angola, .antiguaAndBarbuda, .argentina, .armenia, .australia, .austria,
-                    .azerbaijan, .bahamas, .bahrain, .bangladesh, .barbados, .belarus, .belgium, .belize, .benin, .bhutan,
-                    .bolivia, .bosniaAndHerzegovina, .botswana, .brazil, .brunei, .bulgaria, .burkinaFaso, .burundi, .caboVerde,
-                    .cambodia, .cameroon, .canada, .centralAfricanRepublic, .chad, .chile, .china, .colombia, .comoros, .congo,
-                    .costaRica, .croatia, .cuba, .cyprus, .czechia, .denmark, .djibouti, .dominica, .dominicanRepublic, .eastTimor,
-                    .ecuador, .egypt, .elSalvador, .equatorialGuinea, .eritrea, .estonia, .eswatini, .ethiopia, .fiji, .finland,
-                    .france, .gabon, .gambia, .georgia, .germany, .ghana, .greece, .grenada, .guatemala, .guinea, .guineaBissau,
-                    .guyana, .haiti, .honduras, .hungary, .iceland, .india, .indonesia, .iran, .iraq, .ireland, .israel, .italy,
-                    .ivoryCoast, .jamaica, .japan, .jordan, .kazakhstan, .kenya, .kiribati, .koreaNorth, .koreaSouth, .kosovo,
-                    .kuwait, .kyrgyzstan, .laos, .latvia, .lebanon, .lesotho, .liberia, .libya, .liechtenstein, .lithuania,
-                    .luxembourg, .macedonia, .madagascar, .malawi, .malaysia, .maldives, .mali, .malta, .marshallIslands,
-                    .mauritania, .mauritius, .mexico, .micronesia, .moldova, .monaco, .mongolia, .montenegro, .morocco, .mozambique,
-                    .myanmar, .namibia, .nauru, .nepal, .netherlands, .newZealand, .nicaragua, .niger, .nigeria, .norway, .oman,
-                    .pakistan, .palau, .palestine, .panama, .papuaNewGuinea, .paraguay, .peru, .philippines, .poland, .portugal,
-                    .qatar, .romania, .russia, .rwanda, .saintKittsAndNevis, .saintLucia, .saintVincentAndTheGrenadines, .samoa,
-                    .sanMarino, .saoTomeAndPrincipe, .saudiArabia, .senegal, .serbia, .seychelles, .sierraLeone, .singapore,
-                    .slovakia, .slovenia, .solomonIslands, .somalia, .southAfrica, .southSudan, .spain, .sriLanka, .sudan,
-                    .suriname, .sweden, .switzerland, .syria, .taiwan, .tajikistan, .tanzania, .thailand, .togo, .tonga,
-                    .trinidadAndTobago, .tunisia, .turkey, .turkmenistan, .tuvalu, .uganda, .ukraine, .unitedArabEmirates,
-                    .unitedKingdom, .unitedStates, .uruguay, .uzbekistan, .vanuatu, .vaticanCity, .venezuela, .vietnam, .yemen,
-                    .zambia, .zimbabwe, .empty]
-        }
-    }
-
-// MARK: - Meta
-struct Meta: Codable {
-    let total, perPage, currentPage, lastPage: Int
-
-    enum CodingKeys: String, CodingKey {
-        case total
-        case perPage = "per_page"
-        case currentPage = "current_page"
-        case lastPage = "last_page"
+    static var allCases: [Country] {
+        return [.afghanistan, .albania, .algeria, .andorra, .angola, .antiguaAndBarbuda, .argentina, .armenia, .australia, .austria,
+                .azerbaijan, .bahamas, .bahrain, .bangladesh, .barbados, .belarus, .belgium, .belize, .benin, .bhutan,
+                .bolivia, .bosniaAndHerzegovina, .botswana, .brazil, .brunei, .bulgaria, .burkinaFaso, .burundi, .caboVerde,
+                .cambodia, .cameroon, .canada, .centralAfricanRepublic, .chad, .chile, .china, .colombia, .comoros, .congo,
+                .costaRica, .croatia, .cuba, .cyprus, .czechia, .denmark, .djibouti, .dominica, .dominicanRepublic, .eastTimor,
+                .ecuador, .egypt, .elSalvador, .equatorialGuinea, .eritrea, .estonia, .eswatini, .ethiopia, .fiji, .finland,
+                .france, .gabon, .gambia, .georgia, .germany, .ghana, .greece, .grenada, .guatemala, .guinea, .guineaBissau,
+                .guyana, .haiti, .honduras, .hungary, .iceland, .india, .indonesia, .iran, .iraq, .ireland, .israel, .italy,
+                .ivoryCoast, .jamaica, .japan, .jordan, .kazakhstan, .kenya, .kiribati, .koreaNorth, .koreaSouth, .kosovo,
+                .kuwait, .kyrgyzstan, .laos, .latvia, .lebanon, .lesotho, .liberia, .libya, .liechtenstein, .lithuania,
+                .luxembourg, .macedonia, .madagascar, .malawi, .malaysia, .maldives, .mali, .malta, .marshallIslands,
+                .mauritania, .mauritius, .mexico, .micronesia, .moldova, .monaco, .mongolia, .montenegro, .morocco, .mozambique,
+                .myanmar, .namibia, .nauru, .nepal, .netherlands, .newZealand, .nicaragua, .niger, .nigeria, .norway, .oman,
+                .pakistan, .palau, .palestine, .panama, .papuaNewGuinea, .paraguay, .peru, .philippines, .poland, .portugal,
+                .qatar, .romania, .russia, .rwanda, .saintKittsAndNevis, .saintLucia, .saintVincentAndTheGrenadines, .samoa,
+                .sanMarino, .saoTomeAndPrincipe, .saudiArabia, .senegal, .serbia, .seychelles, .sierraLeone, .singapore,
+                .slovakia, .slovenia, .solomonIslands, .somalia, .southAfrica, .southSudan, .spain, .sriLanka, .sudan,
+                .suriname, .sweden, .switzerland, .syria, .taiwan, .tajikistan, .tanzania, .thailand, .togo, .tonga,
+                .trinidadAndTobago, .tunisia, .turkey, .turkmenistan, .tuvalu, .uganda, .ukraine, .unitedArabEmirates,
+                .unitedKingdom, .unitedStates, .uruguay, .uzbekistan, .vanuatu, .vaticanCity, .venezuela, .vietnam, .yemen,
+                .zambia, .zimbabwe, .empty]
     }
 }

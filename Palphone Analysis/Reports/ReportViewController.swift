@@ -1,7 +1,8 @@
 import UIKit
 import Alamofire
 
-class DetailsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+
+class ReportViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var detailsTableView: UITableView!
     var callData: Welcome?
@@ -13,14 +14,11 @@ class DetailsViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     override func viewDidLoad() {
             super.viewDidLoad()
-//            setupNavigationBar()
             setupLoadingView()
             fetchCallDataReports(page: 2)
             detailsTableView.delegate = self
             detailsTableView.dataSource = self
             setupLoadingIndicator()
-
-            // 1. Hide the back button
             navigationItem.hidesBackButton = true
         }
     
@@ -38,28 +36,10 @@ class DetailsViewController: UIViewController, UITableViewDelegate, UITableViewD
         private func hideLoadingView() {
             loadingView?.isHidden = true
         }
-//    private func setupNavigationBar() {
-//           // Create a separator view
-//           let separatorView = UIView()
-//           separatorView.backgroundColor = .lightGray  // Adjust the color as needed
-//
-//           // Add the separator view as a subview to the navigation bar
-//           if let navigationBar = self.navigationController?.navigationBar {
-//               navigationBar.addSubview(separatorView)
-//
-//               // Set up constraints for the separator view
-//               separatorView.translatesAutoresizingMaskIntoConstraints = false
-//               NSLayoutConstraint.activate([
-//                   separatorView.topAnchor.constraint(equalTo: navigationBar.bottomAnchor),
-//                   separatorView.leadingAnchor.constraint(equalTo: navigationBar.leadingAnchor),
-//                   separatorView.trailingAnchor.constraint(equalTo: navigationBar.trailingAnchor),
-//                   separatorView.heightAnchor.constraint(equalToConstant: 1)  // Adjust the height as needed
-//               ])
-//           }
-//       }
+    
     private func setupLoadingView() {
             loadingView = UIView(frame: CGRect(x: 0, y: 0, width: detailsTableView.bounds.width, height: detailsTableView.bounds.height))
-            loadingView?.backgroundColor = .white  // Adjust the color as needed
+            loadingView?.backgroundColor = .white  
 
         let activityIndicator = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.medium)
             activityIndicator.center = loadingView?.center ?? CGPoint.zero
@@ -74,8 +54,8 @@ class DetailsViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "DetailsCell", for: indexPath) as? DetailsCostumCellTableViewCell else {
-            fatalError("Failed to dequeue a valid DetailsCostumCellTableViewCell.")
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "DetailsCell", for: indexPath) as? ReportTableViewCell else {
+            fatalError("Failed to dequeue a valid ReportTableViewCell.")
         }
         
         for talk in self.callData!.data {
@@ -166,9 +146,9 @@ class DetailsViewController: UIViewController, UITableViewDelegate, UITableViewD
                 
                 DispatchQueue.main.async {
                     self.detailsTableView.reloadData()
-                    self.loadingIndicatorView?.stopAnimating() // Hide loading indicator
+                    self.loadingIndicatorView?.stopAnimating()
                 }
-                // Accessing and recognizing the fetched data
+                
                 for talk in self.callData?.data ?? [] {
                     print("Talk ID: \(talk.talkId), Language ID: \(talk.languageId), Duration: \(talk.duration), Status: \(talk.status)")
                     
