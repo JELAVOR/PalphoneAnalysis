@@ -40,6 +40,7 @@
 		2ACF0C4A2B1C769100B53999 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2ACF0C482B1C769100B53999 /* LaunchScreen.storyboard */; };
 		2ADE30AA2B306FBB009FD775 /* ReportTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADE30A92B306FBB009FD775 /* ReportTableViewCell.swift */; };
 		2AF062A62B415EF6003F9FF9 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF062A52B415EF6003F9FF9 /* LoginService.swift */; };
+		4C7BD75B819F717826EEC228 /* Pods_Palphone_Analysis.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B06580C64C9569A3791F7328 /* Pods_Palphone_Analysis.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,6 +76,9 @@
 		2ACF0C4B2B1C769100B53999 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2ADE30A92B306FBB009FD775 /* ReportTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportTableViewCell.swift; sourceTree = "<group>"; };
 		2AF062A52B415EF6003F9FF9 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
+		A8B4E666673C1415945A5B2A /* Pods-Palphone Analysis.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Palphone Analysis.debug.xcconfig"; path = "Target Support Files/Pods-Palphone Analysis/Pods-Palphone Analysis.debug.xcconfig"; sourceTree = "<group>"; };
+		B06580C64C9569A3791F7328 /* Pods_Palphone_Analysis.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Palphone_Analysis.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CBEE2DC49DE5BB819DFC663A /* Pods-Palphone Analysis.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Palphone Analysis.release.xcconfig"; path = "Target Support Files/Pods-Palphone Analysis/Pods-Palphone Analysis.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +89,7 @@
 				2AC349CA2B3725C200668470 /* Swinject-Dynamic in Frameworks */,
 				2ACB4A522B20A7D3008D1E75 /* Alamofire in Frameworks */,
 				2AC349C82B3725C200668470 /* Swinject in Frameworks */,
+				4C7BD75B819F717826EEC228 /* Pods_Palphone_Analysis.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -158,6 +163,8 @@
 			children = (
 				2ACF0C392B1C769000B53999 /* Palphone Analysis */,
 				2ACF0C382B1C769000B53999 /* Products */,
+				5EDCB973F36732D55EC31372 /* Pods */,
+				F5753472C53F4D3A404C0BE7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -217,6 +224,24 @@
 			path = Welcome;
 			sourceTree = "<group>";
 		};
+		5EDCB973F36732D55EC31372 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A8B4E666673C1415945A5B2A /* Pods-Palphone Analysis.debug.xcconfig */,
+				CBEE2DC49DE5BB819DFC663A /* Pods-Palphone Analysis.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		F5753472C53F4D3A404C0BE7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B06580C64C9569A3791F7328 /* Pods_Palphone_Analysis.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -224,9 +249,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2ACF0C4E2B1C769100B53999 /* Build configuration list for PBXNativeTarget "Palphone Analysis" */;
 			buildPhases = (
+				161490BBBA99D9C81FBDAD41 /* [CP] Check Pods Manifest.lock */,
 				2ACF0C332B1C769000B53999 /* Sources */,
 				2ACF0C342B1C769000B53999 /* Frameworks */,
 				2ACF0C352B1C769000B53999 /* Resources */,
+				A41ED7E91CAAFD5A2360A857 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -267,7 +294,7 @@
 			);
 			mainGroup = 2ACF0C2E2B1C769000B53999;
 			packageReferences = (
-				2ACB4A502B20A7D3008D1E75 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				2ACB4A502B20A7D3008D1E75 /* XCRemoteSwiftPackageReference "Alamofire.git" */,
 				2AC349C62B3725C200668470 /* XCRemoteSwiftPackageReference "Swinject" */,
 			);
 			productRefGroup = 2ACF0C382B1C769000B53999 /* Products */;
@@ -291,6 +318,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		161490BBBA99D9C81FBDAD41 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Palphone Analysis-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A41ED7E91CAAFD5A2360A857 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Palphone Analysis/Pods-Palphone Analysis-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Palphone Analysis/Pods-Palphone Analysis-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Palphone Analysis/Pods-Palphone Analysis-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2ACF0C332B1C769000B53999 /* Sources */ = {
@@ -462,6 +531,7 @@
 		};
 		2ACF0C4F2B1C769100B53999 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A8B4E666673C1415945A5B2A /* Pods-Palphone Analysis.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -491,6 +561,7 @@
 		};
 		2ACF0C502B1C769100B53999 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CBEE2DC49DE5BB819DFC663A /* Pods-Palphone Analysis.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -550,7 +621,7 @@
 				minimumVersion = 2.8.4;
 			};
 		};
-		2ACB4A502B20A7D3008D1E75 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+		2ACB4A502B20A7D3008D1E75 /* XCRemoteSwiftPackageReference "Alamofire.git" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
 			requirement = {
@@ -573,7 +644,7 @@
 		};
 		2ACB4A512B20A7D3008D1E75 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 2ACB4A502B20A7D3008D1E75 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			package = 2ACB4A502B20A7D3008D1E75 /* XCRemoteSwiftPackageReference "Alamofire.git" */;
 			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */

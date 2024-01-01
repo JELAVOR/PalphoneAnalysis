@@ -1,9 +1,13 @@
 import UIKit
 import Alamofire
+import Swinject
 
 // MARK:Table
 class ReportViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    
+    var loginService: LoginService!
+    var apiRequest: APIRequest!
+    let appDelegate = AppDelegate.shared
+
     @IBOutlet weak var detailsTableView: UITableView!
     var callData: Welcome?
     var isFetchingData = false
@@ -17,6 +21,9 @@ class ReportViewController: UIViewController, UITableViewDelegate, UITableViewDa
     override func viewDidLoad() {
             super.viewDidLoad()
             setupLoadingView()
+        
+        apiRequest = appDelegate.container.resolve(APIRequest.self)
+        
             fetchCallDataReports(page: 2)
             detailsTableView.delegate = self
             detailsTableView.dataSource = self

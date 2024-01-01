@@ -1,18 +1,27 @@
-
 import UIKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate {
+    var loginService: LoginService!
 
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
 
-    private var loginService: LoginService!
-
     override func viewDidLoad() {
         super.viewDidLoad()
         loginService = LoginService()
+        
+        // Set text field delegates
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
     }
+
+    // UITextFieldDelegate method to handle return key
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+
 
     @IBAction func loginButtonPressed(_ sender: UIButton) {
         guard let email = emailTextField.text, let password = passwordTextField.text else {

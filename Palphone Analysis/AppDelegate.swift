@@ -7,13 +7,19 @@
 
 import UIKit
 import CoreData
+import Swinject
+
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-    
+    static let shared = UIApplication.shared.delegate as! AppDelegate
+    let container = Container()
     var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
+        container.register(LoginService.self) { _ in LoginService()}
+        container.register(APIRequest.self) { _ in APIRequest()}
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
         window?.makeKeyAndVisible()

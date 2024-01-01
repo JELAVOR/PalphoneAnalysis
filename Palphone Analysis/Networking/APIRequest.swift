@@ -5,10 +5,10 @@ class APIRequest {
     
     
     static let shared = APIRequest()
-
-    private init() {
-        
-    }
+//
+//    private init() {
+//        
+//    }
 
     func fetchData<T: Decodable>(url: URL, method: HTTPMethod, parameters: [String: Any]?, headers: HTTPHeaders?, completion: @escaping (Result<T, Error>) -> Void) {
         AF.request(url, method: method, parameters: parameters, headers: headers)
