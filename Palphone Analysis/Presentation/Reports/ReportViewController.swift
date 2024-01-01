@@ -1,7 +1,7 @@
 import UIKit
 import Alamofire
 
-
+// MARK:Table
 class ReportViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var detailsTableView: UITableView!
@@ -11,6 +11,8 @@ class ReportViewController: UIViewController, UITableViewDelegate, UITableViewDa
     var currentPage = 1
     var totalRecords = 0
     var loadingIndicatorView: UIActivityIndicatorView?
+    private let userDefault = AppUserDefaults()
+    
     
     override func viewDidLoad() {
             super.viewDidLoad()
@@ -23,7 +25,8 @@ class ReportViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
     
     @IBAction func logOutPressed(_ sender: Any) {
-        UserDefaults.standard.removeObject(forKey: "AccessToken")
+        
+        userDefault.removeTokens()
         navigationController?.popToRootViewController(animated: true)
 
     }
@@ -38,16 +41,16 @@ class ReportViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
     
     private func setupLoadingView() {
-            loadingView = UIView(frame: CGRect(x: 0, y: 0, width: detailsTableView.bounds.width, height: detailsTableView.bounds.height))
-            loadingView?.backgroundColor = .white  
-
+        loadingView = UIView(frame: CGRect(x: 0, y: 0, width: detailsTableView.bounds.width, height: detailsTableView.bounds.height))
+        loadingView?.backgroundColor = .white
+        
         let activityIndicator = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.medium)
-            activityIndicator.center = loadingView?.center ?? CGPoint.zero
-            activityIndicator.startAnimating()
-
-            loadingView?.addSubview(activityIndicator)
-            detailsTableView.addSubview(loadingView!)
-        }
+        activityIndicator.center = loadingView?.center ?? CGPoint.zero
+        activityIndicator.startAnimating()
+        
+        loadingView?.addSubview(activityIndicator)
+        detailsTableView.addSubview(loadingView!)
+    }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.callData?.data.count ?? 0
@@ -61,7 +64,7 @@ class ReportViewController: UIViewController, UITableViewDelegate, UITableViewDa
         for talk in self.callData!.data {
             // Accessing pals for each talk
             for _ in talk.pals {
-                var dataForCell = callData?.data[indexPath.row]
+                let dataForCell = callData?.data[indexPath.row]
                 cell.accountId.text = "\(dataForCell!.talkId)"
                 cell.countryLabel.text = "\(getLanguageString(from: dataForCell!.languageId))"
                 let formattedDuration = formatDuration(seconds: dataForCell!.duration)
@@ -92,7 +95,7 @@ class ReportViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     private func fetchData(with jwt: String, page: Int, from url: URL, completion: @escaping (Result<Welcome, Error>) -> Void) {
-        var request = URLRequest(url: url)
+//        let request = URLRequest(url: url)
         let interceptor = AccessTokenInterceptor()
         let parameters: [String: Any] = ["page": page]
         
@@ -227,4 +230,3 @@ private func formatDuration(seconds: Int) -> String {
     let formattedDuration = String(format: "%02d:%02d:%02d", hours, minutes, remainingSeconds)
     return formattedDuration
 }
-

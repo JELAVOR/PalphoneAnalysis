@@ -4,6 +4,8 @@ import Alamofire
 
 
 class AccessTokenInterceptor: RequestInterceptor {
+    
+    
     func adapt(_ urlRequest: URLRequest, for session: Session, completion: @escaping (Result<URLRequest, Error>) -> Void) {
         guard let accessToken = UserDefaults.standard.string(forKey: "AccessToken") else {
             completion(.failure(CustomError.NoAccount))
@@ -31,7 +33,7 @@ class AccessTokenInterceptor: RequestInterceptor {
     }
 
     func refreshToken(completion: @escaping (_ success: Bool) -> Void) {
-        guard let token = UserDefaults.standard.string(forKey: "RefreshToken") else {
+        guard let token = AppUserDefaults().refreshToken else {
             completion(false)
             return
         }
@@ -43,11 +45,12 @@ class AccessTokenInterceptor: RequestInterceptor {
 
         AF.request(refreshTokenURL, method: .get, headers: headers)
             .validate(statusCode: 200..<300)
-            .responseDecodable(of: Aliz2.self) { response in
+            .responseDecodable(of: Base.self) { response in
                 switch response.result {
                 case .success(let newTokens):
-                    UserDefaults.standard.set(newTokens.tokens.accessToken, forKey: "AccessToken")
-                    UserDefaults.standard.set(newTokens.tokens.refreshToken, forKey: "RefreshToken")
+                    
+                    AppUserDefaults().accessToken = newTokens.tokens.accessToken
+                    AppUserDefaults().refreshToken = newTokens.tokens.refreshToken
                     completion(true)
 
                 case .failure(let error):

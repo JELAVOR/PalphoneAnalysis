@@ -8,6 +8,6 @@
 import Foundation
 
 
-struct Aliz2: Codable {
+struct Base: Codable {
     let tokens: Tokens
 }

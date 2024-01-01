@@ -1,3 +1,4 @@
+
 import UIKit
 import Alamofire
 
@@ -17,7 +18,7 @@ class WelcomeViewController: UIViewController {
                 self.titleLabel.text?.append(letter)
             }
             charIndex += 1
-        }            
+        }
         if let _ = UserDefaults.standard.string(forKey: "AccessToken") {
             navigateToTableView()
         }
@@ -26,10 +27,7 @@ class WelcomeViewController: UIViewController {
     
     @IBAction func loginButtonPressed(_ sender: UIButton) {
         
-        let accessToken = "AccessToken"
-
-        UserDefaults.standard.set(accessToken, forKey: "AccessToken")
-
+        let AccessToken = AppUserDefaults().accessToken
        
         NavigationUtility.navigateToTableView(from: self)
     }
@@ -43,4 +41,3 @@ class WelcomeViewController: UIViewController {
         navigationController?.pushViewController(tableViewController, animated: true)
     }
 }
-
