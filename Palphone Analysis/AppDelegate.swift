@@ -20,6 +20,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         container.register(LoginService.self) { _ in LoginService()}
         container.register(APIRequest.self) { _ in APIRequest()}
+        container.register(WelcomeViewModel.self) { resolver in
+            WelcomeViewModel(loginService: resolver.resolve(LoginService.self)!)
+        }
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
         window?.makeKeyAndVisible()

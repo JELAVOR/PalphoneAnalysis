@@ -7,12 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0314BF5F32FC426B65A1B369 /* Pods_Palphone_Analysis.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4903033DA8502126F905984 /* Pods_Palphone_Analysis.framework */; };
+		2A452E072B44203C00BFC875 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A452E062B44203C00BFC875 /* LoginViewModel.swift */; };
+		2A452E092B4422E000BFC875 /* WelcomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A452E082B4422E000BFC875 /* WelcomeViewModel.swift */; };
 		2A53013D2B1F26C7003F4587 /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A53013C2B1F26C7003F4587 /* ReportViewController.swift */; };
 		2A8F2E352B273D1C00C5CA39 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A8F2E342B273D1C00C5CA39 /* Main.storyboard */; };
 		2AAF6D3B2B3811BC00EBF490 /* AccessTokenInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAF6D3A2B3811BC00EBF490 /* AccessTokenInterceptor.swift */; };
 		2AAF6D3D2B3856A300EBF490 /* AuthError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAF6D3C2B3856A300EBF490 /* AuthError.swift */; };
 		2AAF6D3F2B3856CC00EBF490 /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAF6D3E2B3856CC00EBF490 /* CustomError.swift */; };
-		2AAF6D412B38576500EBF490 /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAF6D402B38576500EBF490 /* LoginRequest.swift */; };
+		2AAF6D412B38576500EBF490 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAF6D402B38576500EBF490 /* LoginModel.swift */; };
 		2AAF6D442B38592100EBF490 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAF6D432B38592100EBF490 /* APIRequest.swift */; };
 		2AAF6D462B3859C200EBF490 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAF6D452B3859C200EBF490 /* Response.swift */; };
 		2AAF6D4A2B3860E100EBF490 /* AppUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAF6D492B3860E100EBF490 /* AppUserDefaults.swift */; };
@@ -40,16 +43,17 @@
 		2ACF0C4A2B1C769100B53999 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2ACF0C482B1C769100B53999 /* LaunchScreen.storyboard */; };
 		2ADE30AA2B306FBB009FD775 /* ReportTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADE30A92B306FBB009FD775 /* ReportTableViewCell.swift */; };
 		2AF062A62B415EF6003F9FF9 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF062A52B415EF6003F9FF9 /* LoginService.swift */; };
-		4C7BD75B819F717826EEC228 /* Pods_Palphone_Analysis.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B06580C64C9569A3791F7328 /* Pods_Palphone_Analysis.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2A452E062B44203C00BFC875 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		2A452E082B4422E000BFC875 /* WelcomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewModel.swift; sourceTree = "<group>"; };
 		2A53013C2B1F26C7003F4587 /* ReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
 		2A8F2E342B273D1C00C5CA39 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		2AAF6D3A2B3811BC00EBF490 /* AccessTokenInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessTokenInterceptor.swift; sourceTree = "<group>"; };
 		2AAF6D3C2B3856A300EBF490 /* AuthError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthError.swift; sourceTree = "<group>"; };
 		2AAF6D3E2B3856CC00EBF490 /* CustomError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
-		2AAF6D402B38576500EBF490 /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
+		2AAF6D402B38576500EBF490 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		2AAF6D432B38592100EBF490 /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
 		2AAF6D452B3859C200EBF490 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		2AAF6D492B3860E100EBF490 /* AppUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUserDefaults.swift; sourceTree = "<group>"; };
@@ -76,9 +80,9 @@
 		2ACF0C4B2B1C769100B53999 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2ADE30A92B306FBB009FD775 /* ReportTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportTableViewCell.swift; sourceTree = "<group>"; };
 		2AF062A52B415EF6003F9FF9 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
-		A8B4E666673C1415945A5B2A /* Pods-Palphone Analysis.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Palphone Analysis.debug.xcconfig"; path = "Target Support Files/Pods-Palphone Analysis/Pods-Palphone Analysis.debug.xcconfig"; sourceTree = "<group>"; };
-		B06580C64C9569A3791F7328 /* Pods_Palphone_Analysis.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Palphone_Analysis.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CBEE2DC49DE5BB819DFC663A /* Pods-Palphone Analysis.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Palphone Analysis.release.xcconfig"; path = "Target Support Files/Pods-Palphone Analysis/Pods-Palphone Analysis.release.xcconfig"; sourceTree = "<group>"; };
+		3F512FE1C3996FB120F5A03F /* Pods-Palphone Analysis.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Palphone Analysis.release.xcconfig"; path = "Target Support Files/Pods-Palphone Analysis/Pods-Palphone Analysis.release.xcconfig"; sourceTree = "<group>"; };
+		488D7142ED71BF34A0E63023 /* Pods-Palphone Analysis.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Palphone Analysis.debug.xcconfig"; path = "Target Support Files/Pods-Palphone Analysis/Pods-Palphone Analysis.debug.xcconfig"; sourceTree = "<group>"; };
+		E4903033DA8502126F905984 /* Pods_Palphone_Analysis.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Palphone_Analysis.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,13 +93,35 @@
 				2AC349CA2B3725C200668470 /* Swinject-Dynamic in Frameworks */,
 				2ACB4A522B20A7D3008D1E75 /* Alamofire in Frameworks */,
 				2AC349C82B3725C200668470 /* Swinject in Frameworks */,
-				4C7BD75B819F717826EEC228 /* Pods_Palphone_Analysis.framework in Frameworks */,
+				0314BF5F32FC426B65A1B369 /* Pods_Palphone_Analysis.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		02B8DD27AEF13B01A518311B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E4903033DA8502126F905984 /* Pods_Palphone_Analysis.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2A452E0A2B44467100BFC875 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		2A452E0B2B44467D00BFC875 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 		2AAF6D392B38119900EBF490 /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
@@ -163,8 +189,8 @@
 			children = (
 				2ACF0C392B1C769000B53999 /* Palphone Analysis */,
 				2ACF0C382B1C769000B53999 /* Products */,
-				5EDCB973F36732D55EC31372 /* Pods */,
-				F5753472C53F4D3A404C0BE7 /* Frameworks */,
+				9CC7ABC78E1FEFB5002AEFA8 /* Pods */,
+				02B8DD27AEF13B01A518311B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -179,6 +205,8 @@
 		2ACF0C392B1C769000B53999 /* Palphone Analysis */ = {
 			isa = PBXGroup;
 			children = (
+				2A452E0A2B44467100BFC875 /* Domain */,
+				2A452E0B2B44467D00BFC875 /* Data */,
 				2ACF0C3A2B1C769000B53999 /* AppDelegate.swift */,
 				2ACF0C3C2B1C769000B53999 /* SceneDelegate.swift */,
 				2A8F2E342B273D1C00C5CA39 /* Main.storyboard */,
@@ -210,8 +238,9 @@
 			isa = PBXGroup;
 			children = (
 				2ACB4A542B20A938008D1E75 /* LoginViewController.swift */,
+				2A452E062B44203C00BFC875 /* LoginViewModel.swift */,
+				2AAF6D402B38576500EBF490 /* LoginModel.swift */,
 				2AF062A52B415EF6003F9FF9 /* LoginService.swift */,
-				2AAF6D402B38576500EBF490 /* LoginRequest.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -220,26 +249,18 @@
 			isa = PBXGroup;
 			children = (
 				2ACF0C3E2B1C769000B53999 /* WelcomeViewController.swift */,
+				2A452E082B4422E000BFC875 /* WelcomeViewModel.swift */,
 			);
 			path = Welcome;
 			sourceTree = "<group>";
 		};
-		5EDCB973F36732D55EC31372 /* Pods */ = {
+		9CC7ABC78E1FEFB5002AEFA8 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				A8B4E666673C1415945A5B2A /* Pods-Palphone Analysis.debug.xcconfig */,
-				CBEE2DC49DE5BB819DFC663A /* Pods-Palphone Analysis.release.xcconfig */,
+				488D7142ED71BF34A0E63023 /* Pods-Palphone Analysis.debug.xcconfig */,
+				3F512FE1C3996FB120F5A03F /* Pods-Palphone Analysis.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
-			sourceTree = "<group>";
-		};
-		F5753472C53F4D3A404C0BE7 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				B06580C64C9569A3791F7328 /* Pods_Palphone_Analysis.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -249,11 +270,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2ACF0C4E2B1C769100B53999 /* Build configuration list for PBXNativeTarget "Palphone Analysis" */;
 			buildPhases = (
-				161490BBBA99D9C81FBDAD41 /* [CP] Check Pods Manifest.lock */,
+				4D596F44359B01631F123B48 /* [CP] Check Pods Manifest.lock */,
 				2ACF0C332B1C769000B53999 /* Sources */,
 				2ACF0C342B1C769000B53999 /* Frameworks */,
 				2ACF0C352B1C769000B53999 /* Resources */,
-				A41ED7E91CAAFD5A2360A857 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -294,7 +314,7 @@
 			);
 			mainGroup = 2ACF0C2E2B1C769000B53999;
 			packageReferences = (
-				2ACB4A502B20A7D3008D1E75 /* XCRemoteSwiftPackageReference "Alamofire.git" */,
+				2ACB4A502B20A7D3008D1E75 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				2AC349C62B3725C200668470 /* XCRemoteSwiftPackageReference "Swinject" */,
 			);
 			productRefGroup = 2ACF0C382B1C769000B53999 /* Products */;
@@ -320,7 +340,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		161490BBBA99D9C81FBDAD41 /* [CP] Check Pods Manifest.lock */ = {
+		4D596F44359B01631F123B48 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -342,23 +362,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		A41ED7E91CAAFD5A2360A857 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Palphone Analysis/Pods-Palphone Analysis-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Palphone Analysis/Pods-Palphone Analysis-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Palphone Analysis/Pods-Palphone Analysis-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -372,13 +375,14 @@
 				2AAF6D542B38637E00EBF490 /* Action.swift in Sources */,
 				2AF062A62B415EF6003F9FF9 /* LoginService.swift in Sources */,
 				2AAF6D522B38636800EBF490 /* Permission.swift in Sources */,
+				2A452E092B4422E000BFC875 /* WelcomeViewModel.swift in Sources */,
 				2AAF6D672B38659700EBF490 /* FormatUtility.swift in Sources */,
 				2AAF6D4A2B3860E100EBF490 /* AppUserDefaults.swift in Sources */,
 				2AAF6D652B38656900EBF490 /* NavigationUtility.swift in Sources */,
 				2ACF0C452B1C769000B53999 /* Palphone_Analysis.xcdatamodeld in Sources */,
 				2ADE30AA2B306FBB009FD775 /* ReportTableViewCell.swift in Sources */,
 				2AAF6D5E2B3863F500EBF490 /* Meta.swift in Sources */,
-				2AAF6D412B38576500EBF490 /* LoginRequest.swift in Sources */,
+				2AAF6D412B38576500EBF490 /* LoginModel.swift in Sources */,
 				2ACF0C3F2B1C769000B53999 /* WelcomeViewController.swift in Sources */,
 				2ACF0C3B2B1C769000B53999 /* AppDelegate.swift in Sources */,
 				2AAF6D3D2B3856A300EBF490 /* AuthError.swift in Sources */,
@@ -386,6 +390,7 @@
 				2ACF0C3D2B1C769000B53999 /* SceneDelegate.swift in Sources */,
 				2AAF6D622B38642200EBF490 /* TalkPal.swift in Sources */,
 				2AAF6D502B38626D00EBF490 /* Aliz.swift in Sources */,
+				2A452E072B44203C00BFC875 /* LoginViewModel.swift in Sources */,
 				2AAF6D562B38639200EBF490 /* ActionName.swift in Sources */,
 				2AAF6D582B3863A600EBF490 /* Tokens.swift in Sources */,
 				2AAF6D462B3859C200EBF490 /* Response.swift in Sources */,
@@ -531,7 +536,7 @@
 		};
 		2ACF0C4F2B1C769100B53999 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A8B4E666673C1415945A5B2A /* Pods-Palphone Analysis.debug.xcconfig */;
+			baseConfigurationReference = 488D7142ED71BF34A0E63023 /* Pods-Palphone Analysis.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -561,7 +566,7 @@
 		};
 		2ACF0C502B1C769100B53999 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CBEE2DC49DE5BB819DFC663A /* Pods-Palphone Analysis.release.xcconfig */;
+			baseConfigurationReference = 3F512FE1C3996FB120F5A03F /* Pods-Palphone Analysis.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -621,7 +626,7 @@
 				minimumVersion = 2.8.4;
 			};
 		};
-		2ACB4A502B20A7D3008D1E75 /* XCRemoteSwiftPackageReference "Alamofire.git" */ = {
+		2ACB4A502B20A7D3008D1E75 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
 			requirement = {
@@ -644,7 +649,7 @@
 		};
 		2ACB4A512B20A7D3008D1E75 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 2ACB4A502B20A7D3008D1E75 /* XCRemoteSwiftPackageReference "Alamofire.git" */;
+			package = 2ACB4A502B20A7D3008D1E75 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */

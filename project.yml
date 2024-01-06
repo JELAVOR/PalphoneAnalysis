@@ -1,0 +1,86 @@
+name: PalphoneAnalysis
+options:
+  bundleIdPrefix: com.JELAVOR.Palphone
+
+configurations:
+  Debug:
+    buildSettings:
+      SWIFT_OPTIMIZATION_LEVEL: '-Onone'
+
+  Release:
+    buildSettings:
+      SWIFT_OPTIMIZATION_LEVEL: '-Owholemodule'
+
+targets:
+  PalphoneAnalysis:
+    type: bundle
+    platform: iOS
+    sources: ["Palphone Analysis/PalphoneAnalysis/Sources"]
+    resources: ["Palphone Analysis/PalphoneAnalysis/Resources"]
+    dependencies:
+      - target: Authentication
+      - target: Networking
+      - target: UserDefaults
+      - target: Model
+      - target: Utilities
+      - target: Welcome
+      - target: Login
+      - target: Reports
+
+  Authentication:
+    type: bundle
+    platform: iOS
+    sources: ["Palphone Analysis/Authentication/Sources"]
+
+  Networking:
+    type: bundle
+    platform: iOS
+    sources: ["Palphone Analysis/Networking/Sources"]
+
+  UserDefaults:
+    type: bundle
+    platform: iOS
+    sources: ["Palphone Analysis/UserDefaults/Sources"]
+
+  Model:
+    type: bundle
+    platform: iOS
+    sources: ["Palphone Analysis/Model/Sources"]
+
+  Utilities:
+    type: bundle
+    platform: iOS
+    sources: ["Palphone Analysis/Utilities/Sources"]
+
+  Welcome:
+    type: bundle
+    platform: iOS
+    sources: ["Palphone Analysis/Presentation/Welcome/Sources"]
+    dependencies:
+      - target: Authentication
+      - target: Networking
+      - target: UserDefaults
+      - target: Model
+      - target: Utilities
+
+  Login:
+    type: bundle
+    platform: iOS
+    sources: ["Palphone Analysis/Presentation/Login/Sources"]
+    dependencies:
+      - target: Authentication
+      - target: Networking
+      - target: UserDefaults
+      - target: Model
+      - target: Utilities
+
+  Reports:
+    type: bundle
+    platform: iOS
+    sources: ["Palphone Analysis/Presentation/Reports/Sources"]
+    dependencies:
+      - target: Authentication
+      - target: Networking
+      - target: UserDefaults
+      - target: Model
+      - target: Utilities

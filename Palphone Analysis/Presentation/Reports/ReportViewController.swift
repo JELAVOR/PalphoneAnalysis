@@ -2,7 +2,7 @@ import UIKit
 import Alamofire
 import Swinject
 
-// MARK:Table
+
 class ReportViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var loginService: LoginService!
     var apiRequest: APIRequest!
@@ -186,24 +186,24 @@ class ReportViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     private func getStatusString(from status: Int) -> String {
         switch status {
-        case 1: return "not started"
-        case 2: return "in progress"
-        case 3: return "finished"
-        case 4: return "exited"
-        case 5: return "wait call"
-        case 6: return "reject call"
-        case 7: return "missed call"
-        case 8: return "cancel call"
-        case 9: return "calling"
-        case 10: return "ringing"
-        case 11: return "cancel ring"
-        case 12: return "pal not found"
-        case 13: return "firebase error"
-        case 14: return "token not found"
-        case 15: return "blocked by pal"
-        case 16: return "deleted pal"
-        case 17: return "receiving notification"
-        case 18: return "busy"
+        case 1: return "Not Started"
+        case 2: return "In Progress"
+        case 3: return "Finished"
+        case 4: return "Exited"
+        case 5: return "Wait Call"
+        case 6: return "Reject Call"
+        case 7: return "Missed Call"
+        case 8: return "Cancel Call"
+        case 9: return "Calling"
+        case 10: return "Ringing"
+        case 11: return "Cancel Ring"
+        case 12: return "Pal Not Found"
+        case 13: return "Firebase Error"
+        case 14: return "Token Not Found"
+        case 15: return "Blocked by Pal"
+        case 16: return "Deleted Pal"
+        case 17: return "Receiving Notification"
+        case 18: return "Busy"
    
         default: return "Unknown"
         }

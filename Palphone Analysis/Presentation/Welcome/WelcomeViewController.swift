@@ -1,11 +1,10 @@
+
+import Foundation
 import UIKit
-import Alamofire
-import Swinject
+
 
 class WelcomeViewController: UIViewController {
-
-    var loginService: LoginService!
-    let appDelegate = AppDelegate.shared
+    var viewModel: WelcomeViewModel!
 
     @IBOutlet weak var titleLabel: UILabel!
 
@@ -13,37 +12,30 @@ class WelcomeViewController: UIViewController {
         super.viewDidLoad()
         titleLabel.text = ""
 
-        var charIndex = 0.0
-        let titleText = "Palphone Analysis"
-        for letter in titleText {
-            Timer.scheduledTimer(withTimeInterval: 0.1 * charIndex, repeats: false) { (timer) in
-                self.titleLabel.text?.append(letter)
-            }
-            charIndex += 1
+        let container = AppDelegate.shared.container
+        viewModel = container.resolve(WelcomeViewModel.self)
+
+        viewModel.animateTitle { [weak self] letter in
+            guard let self = self else { return }
+            self.titleLabel.text?.append(letter)
         }
+
         if let _ = UserDefaults.standard.string(forKey: "AccessToken") {
-            navigateToTableView()
+            viewModel.navigateToTableView?()
         }
     }
 
     @IBAction func loginButtonPressed(_ sender: UIButton) {
-        // Resolve dependencies when the login button is pressed
-        loginService = appDelegate.container.resolve(LoginService.self)
-        let accessToken = AppUserDefaults().accessToken
-
-        NavigationUtility.navigateToTableView(from: self)
+        viewModel.loginButtonPressed()
     }
 
-    private func navigateToTableView() {
+    func navigateToTableView() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         guard let tableViewController = storyboard.instantiateViewController(withIdentifier: "DetailsTable") as? ReportViewController else {
             return
         }
 
-        // Set dependencies before navigating
-        tableViewController.loginService = loginService
-      
-
+        tableViewController.loginService = viewModel.loginService
         navigationController?.pushViewController(tableViewController, animated: true)
     }
 }

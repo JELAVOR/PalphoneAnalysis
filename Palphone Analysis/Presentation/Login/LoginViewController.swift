@@ -1,7 +1,7 @@
 import UIKit
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
-    var loginService: LoginService!
+    var loginViewModel: LoginViewModel!
 
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -9,29 +9,30 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        loginService = LoginService()
-        
+        loginViewModel = LoginViewModel(loginService: LoginService())
+
         // Set text field delegates
         emailTextField.delegate = self
         passwordTextField.delegate = self
     }
 
-    // UITextFieldDelegate method to handle return key
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
-
 
     @IBAction func loginButtonPressed(_ sender: UIButton) {
         guard let email = emailTextField.text, let password = passwordTextField.text else {
             return
         }
 
+        loginViewModel.loginModel.email = email
+        loginViewModel.loginModel.password = password
+
         loginButton.isEnabled = false
         loginButton.setTitle("Logging In...", for: .normal)
 
-        loginService.login(email: email, password: password) { [weak self] result in
+        loginViewModel.login { [weak self] result in
             guard let self = self else { return }
 
             self.loginButton.isEnabled = true
@@ -39,10 +40,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 
             switch result {
             case .success(let aliz):
-             
                 AppUserDefaults().accessToken = aliz.tokens.accessToken
                 AppUserDefaults().refreshToken = aliz.tokens.accessToken
-    
                 NavigationUtility.navigateToTableView(from: self)
 
             case .failure(let error):
@@ -55,3 +54,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         }
     }
 }
+
+
+

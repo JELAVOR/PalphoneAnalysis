@@ -4,18 +4,15 @@
 //
 //  Created by palphone ios on 12/31/23.
 //
-
 import Foundation
-
 import Alamofire
 
 class LoginService {
-
     func login(email: String, password: String, completion: @escaping (Result<Aliz, Error>) -> Void) {
         let baseUrl = "https://boapi.palphone.com"
         let loginURL = baseUrl + "/v1/login"
 
-        let loginData = LoginRequest(email: email, password: password)
+        let loginData = LoginModel(email: email, password: password)
 
         AF.request(loginURL, method: .post, parameters: loginData, encoder: JSONParameterEncoder.default)
             .validate(statusCode: 200..<300)
